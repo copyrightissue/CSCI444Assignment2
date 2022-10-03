@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
+    <meta charset="utf-8">
+    <title>Chris Rogers Assignment 2</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="d3-tip.js"></script>
+    <style>
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            width: 19em;
+            height: 8em;
+            padding: 2em;
+            font: 12px sans-serif;
+            background: whitesmoke;
+            border: 0px;
+            border-radius: 8px;
+
+
+        }
+        .bar {
+            fill: #004488;
+        }
+        .title {
+            font-size: 1.5em;
+        }
+        text {
+            font: 10px sans-serif;
+        }
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2em;
+            font-weight: 300;
+            color: #333;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<h1>Planned Parenthood Locations and U.S. Congressional Districts</h1>
+<div id="svg1">
+    <script src="congress.js"></script>
+
+</div>
+<div id="chart">
+    <script src="chart.js"></script></div>
+<p><b>Hypothesis:</b>
+Access to Planned Parenthood is a major factor in the number of abortions in a given congressional district. The more Planned Parenthood locations in a district, the fewer abortions in that district, and since Democratic districts have more Planned Parenthood locations in them, they will have fewer abortions than Republican districts.
+</p>
+<p><b>Method:</b>
+I used the Planned Parenthood API to get the number of Planned Parenthood locations in each congressional district. I then used a U.S. Census Bureau repository on github to get the congressional district shape files for the 116th Congress.
+    After that I used the D3 library to create a map of the number of Planned Parenthood locations in each congressional district colored by the political party.
+    Finally, data from the Guttmacher Institute to get the number of abortions in each State in 2017 (the latest available complete dataset I could find)
+    was used to create a bar chart of the number of abortions in each State.
+    This helped me to determine which States had the most abortions and which States had the fewest abortions.
+    The map of planned parenthood locations then helps inform us that
+    the number of abortions in a given state is related to the number of Planned Parenthood locations in that state.
+    Though my hypothesis was incorrect and that more access to abortive services correlates to a higher rate of abortions. Republican held states have fewer abortions then Democratic held states.
+</p>
+<p><b>Results:</b>
+The results of my analysis show that there is a strong correlation between the number of Planned Parenthood locations in a congressional district and the number of abortions in that state. The more Planned Parenthood locations in a district, the more abortions in that state.
+<p><b>Sources:</b></br>
+<a href =https://www.guttmacher.org/report/abortion-incidence-service-availability-us-2017>Guttmacher Data</a></br>
+<a href =https://www.plannedparenthood.org>Planned Parenthood</a></br> I used a web scraper to gather locations of PP locations</br>
+<a href="https://github.com/bradoyler/atlas-make/tree/master/us-congres">Github for District json</a></br>Congressional district topoJSON file, updated for 116th party affiliation</p>
+<p><b>Annotated Page</b></br>
+<a href="AnnotatedAssignment2.pdf">Link</a></p>
+</body>
+
+</html>
